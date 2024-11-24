@@ -1,0 +1,28 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Prime Number Checker</title>
+      </head>
+      <body>
+          <h1>Check if a number is Prime</h1>
+          <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Check</button>
+          </form>
+          
+          {% if result is not None %}
+              <h2>The number {{ form.number.value }} is {% if result %}prime{% else %}not prime{% endif %}.</h2>
+          {% endif %}
+      </body>
+      </html>
+      
+
+{% endblock %}
