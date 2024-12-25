@@ -1,2 +1,0 @@
-# RShopy
-E-Commerce Website
